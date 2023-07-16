@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Progression{% endblock %}
+
+{% block body %}
+    <h1>Progression</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ progression.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ progression.date ? progression.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ progression.duree }}</td>
+            </tr>
+            
+             <tr>
+                <th>Matiere</th>
+                <td> ({{ progression.matieres.libelle }} total)</td> 
+            </tr> 
+            <tr>
+                <th>Quota</th>
+                <td> ({{ progression.matieres.quota }} total)</td> 
+            </tr> 
+             <tr>
+                <th>Enseignant</th>
+                <td> ({{ progression.enseignants.nom }} total)</td> 
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td> ({{ progression.seances.libelle }} total)</td> 
+            </tr>    
+        </tbody>
+    </table>
+
+    <a href="{{ path('progression_index') }}">back to list</a>
+
+    <a href="{{ path('progression_edit', {'id': progression.id}) }}">edit</a>
+
+    {{ include('progression/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{{ form_start(form) }}
+    {{ form_row(form.libelle, {'label': 'Libellé','attr': 
+    {'class':'form-control' }}) }}
+    {{ form_row(form.filieres, {'label': 'Filière','attr': 
+    {'class':'form-control'}}) }}
+    {{ form_row(form.appartient, {'label': 'Niveau','attr': 
+    {'class':'form-control'}}) }}
+    {{ form_row(form.contient, {'label': 'Matière','attr': 
+    {'class':'form-control'}}) }}
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }}

@@ -1,0 +1,11 @@
+{{ form_start(form) }}
+    {{ form_row(form.nom, {'label': 'Nom et Prénoms','attr': 
+    {'class':'form-control' }}) }}
+    {{ form_row(form.sexe, {'label': 'Sexe','attr': 
+    {'class':'form-control'}}) }}
+    {{ form_row(form.tel, {'label': 'Tel','attr': 
+    {'class':'form-control'}}) }}
+    {{ form_row(form.matieres, {'label': 'Matière','attr': 
+    {'class':'form-control'}}) }}
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }}

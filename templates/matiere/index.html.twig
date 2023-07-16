@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Matiere index{% endblock %}
+
+{% block body %}
+    <h1>Matiere index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Quota</th>
+                <th>niveau</th>
+                  <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for matiere in matieres %}
+            <tr>
+                <td>{{ matiere.id }}</td>
+                <td>{{ matiere.libelle }}</td>
+                <td>{{ matiere.quota }}</td>
+                <td>
+                {% for niveau in matiere.niveaux %}
+                    {{ niveau.libelle}}
+                {% endfor %}
+                </td>
+                 <td>
+                    <a href="{{ path('matiere_show', {'id': matiere.id}) }}">show</a>
+                    <a href="{{ path('matiere_edit', {'id': matiere.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('matiere_new') }}">Create new</a>
+{% endblock %}

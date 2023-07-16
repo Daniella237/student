@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+    {{ form_row(form.libelle, {'label': 'Libellé','attr': 
+    {'class':'form-control' }}) }}
+    {{ form_row(form.quota, {'label': 'Quota','attr': 
+    {'class':'form-control'}}) }}
+    {{ form_row(form.niveaux, {'label': 'Niveau','attr': 
+    {'class':'form-control'}}) }}
+    {{ form_row(form.specialites, {'label': 'Spécialité','attr': 
+    {'class':'form-control'}}) }}
+	 {{ form_row(form.dispense, {'label': 'Enseignant','attr': 
+    {'class':'form-control'}}) }}
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }}

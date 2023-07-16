@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+    {{ form_row(form.date ) }}
+    {{ form_row(form.duree, {'label': 'Durée','attr': 
+    {'class':'form-control'}}) }}
+	 {{ form_row(form.enseignants, {'label': 'Enseignant','attr': 
+    {'class':'form-control'}}) }}
+    {{ form_row(form.matieres, {'label': 'Matière','attr': 
+    {'class':'form-control'}}) }}
+    {{ form_row(form.seances, {'label': 'Type','attr': 
+    {'class':'form-control'}}) }}
+	
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }}

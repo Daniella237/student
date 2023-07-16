@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Progression index{% endblock %}
+
+{% block body %}
+
+    <h1>Progression index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Enseignant</th>
+                <th>Spécialité</th>
+                <th>Matière</th>
+                
+                <th>quota</th>
+                <th>total d'heure</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stat in stats %}
+
+            <tr> 
+                <td> </td>
+                <td>{{ stat['enseignant'] }}</td>
+                <td>{{ stat['libelle_specialite'] }}</td>
+                <td>{{ stat['nom_matiere'] }}</td>
+                
+                <td>{{ stat['quota'] }}</td>
+                <td>{{ stat['number_printed'] }}</td>
+                
+               
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+  
+{% endblock %}

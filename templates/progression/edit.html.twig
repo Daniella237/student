@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Progression{% endblock %}
+
+{% block body %}
+    <h1>Edit Progression</h1>
+
+    {{ include('progression/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('progression_index') }}">back to list</a>
+
+    {{ include('progression/_delete_form.html.twig') }}
+{% endblock %}

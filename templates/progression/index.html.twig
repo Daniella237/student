@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Progression index{% endblock %}
+
+{% block body %}
+
+    <h1>Progression index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                {# <th>Spécialité</th>
+                <th>Niveau</th> #}
+                <th>Matière</th>
+                <th>Enseignant</th>
+                <th>Quota</th>
+                <th>Durée</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for progression in progressions %}
+
+            <tr> 
+                <td>{{ progression.id }}</td>
+                <td>{{ progression.date ? progression.date|date('Y-m-d') : '' }}</td>
+                {# <td>{{ progression.matieres.specialites.libelle }}</td>
+                <td>{{ progression.matieres.niveaux.libelle }}</td> #}
+                <td>{{ progression.matieres.libelle }}</td>
+                <td>{{ progression.enseignants.nom }}</td>
+                <td>{{ progression.matieres.quota }}</td>
+                <td>{{ progression.duree }}</td>
+                <td>{{ progression.seances.libelle }}</td>
+                <td>
+                    <a href="{{ path('progression_show', {'id': progression.id}) }}">show</a>
+                    <a href="{{ path('progression_edit', {'id': progression.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('progression_new') }}">Create new</a>
+{% endblock %}
